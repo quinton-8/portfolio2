@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
@@ -12,6 +12,34 @@
     <meta property="og:title" content="Quinton Juma | Software Engineer & Systems Architect" />
     <meta property="og:description" content="Software Developer specializing in high-performance Go backends, Next.js applications, and resilient distributed systems." />
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/211494205?v=4" />
+
+    <!-- Synchronous Pre-paint Theme Script (Zero White Flash / FOUC) -->
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          } else {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          }
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    <style>
+      html.dark, html.dark body {
+        background-color: #0A0E17 !important;
+        color: #F0F4FA;
+      }
+      html.light, html.light body {
+        background-color: #F8FAFC !important;
+        color: #0F172A;
+      }
+    </style>
 
     <!-- Google Fonts: Inter & JetBrains Mono (Minimal Swiss Precision) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
