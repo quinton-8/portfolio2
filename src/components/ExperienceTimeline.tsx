@@ -11,22 +11,22 @@ export const ExperienceTimeline: React.FC = () => {
         <div className="text-center space-y-3 mb-14">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>Path & Milestones</span>
+            <span>[ TRAJECTORY // ENGINEERING_EDUCATION ]</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-mono">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Experience & Education
           </h2>
-          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto">
-            The dual foundation of deep telecommunications networking theory and intense peer-driven software engineering at Zone01 Kisumu.
+          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
+            Bridging rigorous telecommunications networking theory with intense peer-driven software engineering at Zone01 Kisumu.
           </p>
         </div>
 
         {/* Timeline Items */}
-        <div className="relative border-l-2 border-paper-200 dark:border-carbon-800 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
+        <div className="relative border-l-2 border-paper-200 dark:border-carbon-750 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-12">
           {experiencesData.map((item) => (
             <div key={item.id} className="relative group">
               {/* Timeline Marker Icon */}
-              <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 flex items-center justify-center w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-paper-50 dark:bg-carbon-900 border-2 border-brand-emerald text-brand-emerald shadow-md">
+              <div className="absolute -left-[35px] sm:-left-[51px] top-1.5 flex items-center justify-center w-8 sm:w-10 h-8 sm:h-10 rounded-full bg-white dark:bg-carbon-900 border-2 border-brand-emerald text-brand-emerald shadow-md">
                 {item.type === 'engineering' ? (
                   <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
                 ) : (
@@ -35,15 +35,15 @@ export const ExperienceTimeline: React.FC = () => {
               </div>
 
               {/* Card Container */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 shadow-sm hover:border-brand-emerald/40 transition-colors">
+              <div className="p-6 sm:p-8 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700/80 shadow-sm hover:border-brand-emerald/40 transition-colors">
                 
                 {/* Header row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                   <div>
-                    <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-brand-emerald/10 text-brand-emerald mb-2">
-                      {item.badge}
+                    <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 mb-2">
+                      [ {item.badge} ]
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold font-mono text-paper-900 dark:text-carbon-100">
+                    <h3 className="text-xl sm:text-2xl font-bold font-heading text-paper-900 dark:text-carbon-100">
                       {item.role}
                     </h3>
                     <div className="text-base font-semibold text-brand-cyan font-mono mt-0.5">
@@ -79,11 +79,11 @@ export const ExperienceTimeline: React.FC = () => {
                 </div>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-paper-100 dark:border-carbon-800">
+                <div className="flex flex-wrap gap-1.5 pt-3 border-t border-paper-100 dark:border-carbon-750">
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-lg bg-paper-100 dark:bg-carbon-800 text-[11px] font-mono text-paper-600 dark:text-carbon-400 border border-paper-200 dark:border-carbon-700/60"
+                      className="px-2.5 py-1 rounded bg-paper-100 dark:bg-carbon-800 text-[11px] font-mono text-paper-600 dark:text-carbon-400 border border-paper-200 dark:border-carbon-700"
                     >
                       {tag}
                     </span>

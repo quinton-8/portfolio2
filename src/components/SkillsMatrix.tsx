@@ -12,7 +12,7 @@ export const SkillsMatrix: React.FC = () => {
       case 'Layout':
         return <Layout className="w-5 h-5 text-brand-indigo" />;
       case 'Database':
-        return <Database className="w-5 h-5 text-amber-400" />;
+        return <Database className="w-5 h-5 text-brand-amber" />;
       default:
         return <Code2 className="w-5 h-5 text-brand-emerald" />;
     }
@@ -22,19 +22,19 @@ export const SkillsMatrix: React.FC = () => {
     switch (level) {
       case 'Mastery':
         return (
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 font-bold">
+          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-emerald/15 text-emerald-700 dark:text-emerald-400 border border-brand-emerald/30 font-bold uppercase tracking-wider">
             Mastery
           </span>
         );
       case 'Advanced':
         return (
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20 font-medium">
+          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-cyan/15 text-cyan-700 dark:text-cyan-400 border border-brand-cyan/30 font-bold uppercase tracking-wider">
             Advanced
           </span>
         );
       case 'Proficient':
         return (
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-paper-200 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 font-normal">
+          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-paper-200 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 border border-paper-300 dark:border-carbon-700 font-medium uppercase tracking-wider">
             Proficient
           </span>
         );
@@ -44,19 +44,19 @@ export const SkillsMatrix: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-28 bg-paper-100/50 dark:bg-carbon-900/40">
+    <section id="skills" className="py-20 md:py-28 bg-paper-100/60 dark:bg-carbon-900/60 border-t border-paper-200 dark:border-carbon-750">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center space-y-3 mb-14">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
             <Code2 className="w-3.5 h-3.5" />
-            <span>Technical Capabilities</span>
+            <span>[ SYSTEM_CAPABILITIES // ARSENAL ]</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-mono">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Skills & Architectural Toolkit
           </h2>
-          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
             High-density systems programming in Go, modern Next.js client engineering, and production-tested API architectures.
           </p>
         </div>
@@ -66,18 +66,18 @@ export const SkillsMatrix: React.FC = () => {
           {skillCategoriesData.map((category, idx) => (
             <div
               key={idx}
-              className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 shadow-sm hover:border-brand-emerald/40 transition-colors"
+              className="p-6 sm:p-8 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700/80 shadow-sm hover:border-brand-emerald/40 transition-colors"
             >
               {/* Category Header */}
               <div className="flex items-center space-x-3 mb-2">
-                <div className="p-2.5 rounded-xl bg-paper-100 dark:bg-carbon-800 border border-paper-200 dark:border-carbon-700/80">
+                <div className="p-2.5 rounded-lg bg-paper-100 dark:bg-carbon-800 border border-paper-200 dark:border-carbon-700">
                   {getIcon(category.iconName)}
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold font-mono text-paper-900 dark:text-carbon-100">
+                  <h3 className="text-lg sm:text-xl font-bold font-heading text-paper-900 dark:text-carbon-100">
                     {category.title}
                   </h3>
-                  <p className="text-xs text-paper-500 dark:text-carbon-400">
+                  <p className="text-xs text-paper-500 dark:text-carbon-400 font-mono">
                     {category.description}
                   </p>
                 </div>
@@ -88,7 +88,7 @@ export const SkillsMatrix: React.FC = () => {
                 {category.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center justify-between p-3 rounded-xl bg-paper-50 dark:bg-carbon-900/60 border border-paper-100 dark:border-carbon-800/80 hover:border-paper-300 dark:hover:border-carbon-700 transition-colors"
+                    className="flex items-center justify-between p-3 rounded-lg bg-paper-50 dark:bg-carbon-900 border border-paper-100 dark:border-carbon-800 hover:border-paper-300 dark:hover:border-carbon-700 transition-colors"
                   >
                     <div className="flex items-center space-x-2.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald"></div>

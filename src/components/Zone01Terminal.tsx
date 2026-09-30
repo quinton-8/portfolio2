@@ -42,16 +42,16 @@ export const Zone01Terminal: React.FC = () => {
       case 'help':
         responseNode = (
           <div className="text-xs sm:text-sm space-y-2 text-carbon-300 font-mono">
-            <p className="font-semibold text-carbon-100">Available Terminal Routines:</p>
+            <p className="font-semibold text-carbon-100">// AVAILABLE_SYSTEM_ROUTINES:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-2">
               <div><span className="text-brand-emerald font-bold">efpitch</span> : Inspect efpitch.com tournament platform</div>
               <div><span className="text-brand-cyan font-bold">paykit</span> : Unified Go SDK for Kenyan payments</div>
               <div><span className="text-brand-indigo font-bold">judysales</span> : Footwear & apparel M-Pesa store</div>
               <div><span className="text-emerald-400 font-bold">zone01</span> : Zone01 Kisumu 01Edu peer engineering</div>
               <div><span className="text-cyan-400 font-bold">telecom</span> : Kabarak Univ Telecomm Engineering</div>
-              <div><span className="text-amber-400 font-bold">stack</span> : View core backend & frontend stacks</div>
+              <div><span className="text-brand-amber font-bold">stack</span> : View core backend & frontend stacks</div>
               <div><span className="text-brand-emerald font-bold">contact</span> : Direct phone, WhatsApp & email links</div>
-              <div><span className="text-carbon-400 font-bold">clear</span> : Clear terminal history</div>
+              <div><span className="text-carbon-400 font-bold">clear</span> : Clear terminal history buffer</div>
             </div>
           </div>
         );
@@ -67,7 +67,7 @@ export const Zone01Terminal: React.FC = () => {
                 href="https://efpitch.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-1 text-xs hover:underline text-brand-cyan"
+                className="flex items-center space-x-1 text-xs hover:underline text-brand-cyan cursor-pointer"
               >
                 <span>efpitch.com</span>
                 <ExternalLink className="w-3 h-3" />
@@ -96,7 +96,7 @@ export const Zone01Terminal: React.FC = () => {
                 href="https://github.com/quinton-8/paykit-go"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-1 text-xs hover:underline text-brand-emerald"
+                className="flex items-center space-x-1 text-xs hover:underline text-brand-emerald cursor-pointer"
               >
                 <span>GitHub Repo</span>
                 <ExternalLink className="w-3 h-3" />
@@ -118,7 +118,7 @@ export const Zone01Terminal: React.FC = () => {
                 href="https://github.com/quinton-8/judysales"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-1 text-xs hover:underline text-brand-cyan"
+                className="flex items-center space-x-1 text-xs hover:underline text-brand-cyan cursor-pointer"
               >
                 <span>GitHub Repo</span>
                 <ExternalLink className="w-3 h-3" />
@@ -182,21 +182,21 @@ export const Zone01Terminal: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <MessageSquare className="w-3.5 h-3.5 text-brand-emerald" />
                 <span>WhatsApp:</span>
-                <a href={profileData.contacts.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-brand-emerald hover:underline font-bold">
+                <a href={profileData.contacts.whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-brand-emerald hover:underline font-bold cursor-pointer">
                   {profileData.contacts.whatsappFormatted}
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-3.5 h-3.5 text-brand-cyan" />
                 <span>Phone:</span>
-                <a href={`tel:${profileData.contacts.phone}`} className="text-brand-cyan hover:underline">
+                <a href={`tel:${profileData.contacts.phone}`} className="text-brand-cyan hover:underline cursor-pointer">
                   {profileData.contacts.phoneFormatted}
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-3.5 h-3.5 text-brand-indigo" />
                 <span>Email:</span>
-                <a href={`mailto:${profileData.contacts.email}`} className="text-brand-indigo hover:underline">
+                <a href={`mailto:${profileData.contacts.email}`} className="text-brand-indigo hover:underline cursor-pointer">
                   {profileData.contacts.email}
                 </a>
               </div>
@@ -238,18 +238,18 @@ export const Zone01Terminal: React.FC = () => {
         <div className="text-center space-y-3 mb-10">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
             <Terminal className="w-3.5 h-3.5" />
-            <span>Interactive Environment</span>
+            <span>[ SHELL // ENVIRONMENT_V2 ]</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Zone01 Developer Terminal
           </h2>
           <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
-            Test Quinton's system background, production systems, and telecommunications knowledge directly from this shell.
+            Inspect Quinton's system architectures, production platforms, and telecommunications background via interactive CLI.
           </p>
         </div>
 
         {/* Terminal Window */}
-        <div className="terminal-window border border-carbon-800 bg-carbon-950 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="terminal-window border border-carbon-700 bg-carbon-950 rounded-2xl shadow-2xl overflow-hidden">
           
           {/* Top Bar */}
           <div className="flex items-center justify-between px-4 py-3 bg-carbon-900 border-b border-carbon-800">
@@ -261,7 +261,7 @@ export const Zone01Terminal: React.FC = () => {
             </div>
             <div className="flex items-center space-x-2 text-xs text-carbon-400 font-mono">
               <Sparkles className="w-3.5 h-3.5 text-brand-emerald" />
-              <span>Interactive CLI</span>
+              <span>TERMINAL // EMULATOR</span>
             </div>
           </div>
 
@@ -284,6 +284,7 @@ export const Zone01Terminal: React.FC = () => {
           {/* Terminal Input Bar */}
           <form
             onSubmit={handleFormSubmit}
+            aria-label="Zone01 terminal form"
             className="flex items-center px-4 py-3 bg-carbon-900/90 border-t border-carbon-800"
           >
             <span className="text-brand-emerald font-bold text-xs sm:text-sm font-mono mr-2">
@@ -292,14 +293,16 @@ export const Zone01Terminal: React.FC = () => {
             <input
               ref={inputRef}
               type="text"
+              aria-label="Terminal command input"
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
-              placeholder="Type command (e.g. 'efpitch', 'stack', 'contact')..."
+              placeholder="Type command ('help', 'efpitch', 'stack', 'contact')..."
               className="flex-1 bg-transparent border-none text-xs sm:text-sm font-mono text-carbon-100 focus:outline-none placeholder-carbon-600"
             />
             <button
               type="submit"
-              className="p-1.5 rounded-lg bg-carbon-800 hover:bg-carbon-700 text-carbon-300 hover:text-brand-emerald transition-colors"
+              aria-label="Execute terminal command"
+              className="w-10 h-10 flex items-center justify-center rounded-lg bg-carbon-800 hover:bg-carbon-700 text-carbon-300 hover:text-brand-emerald transition-colors cursor-pointer"
               title="Run command"
             >
               <CornerDownLeft className="w-4 h-4" />
@@ -307,14 +310,14 @@ export const Zone01Terminal: React.FC = () => {
           </form>
 
           {/* Quick-Click Command Chips */}
-          <div className="px-4 py-2.5 bg-carbon-950 border-t border-carbon-850 flex items-center space-x-2 overflow-x-auto text-[11px] font-mono">
-            <span className="text-carbon-500 whitespace-nowrap">Click to run:</span>
+          <div className="px-4 py-3 bg-carbon-950 border-t border-carbon-850 flex items-center space-x-2 overflow-x-auto text-[11px] font-mono">
+            <span className="text-carbon-500 whitespace-nowrap uppercase tracking-wider">Quick Commands:</span>
             {commandChips.map((chip) => (
               <button
                 key={chip}
                 type="button"
                 onClick={() => executeCommand(chip)}
-                className="px-2.5 py-1 rounded bg-carbon-900 hover:bg-carbon-800 hover:text-brand-emerald text-carbon-400 border border-carbon-800 whitespace-nowrap transition-colors"
+                className="px-3 py-1.5 rounded bg-carbon-900 hover:bg-carbon-800 hover:text-brand-emerald text-carbon-300 border border-carbon-800 whitespace-nowrap transition-colors cursor-pointer min-h-[32px]"
               >
                 {chip}
               </button>

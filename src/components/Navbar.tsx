@@ -27,10 +27,10 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'glass-panel py-3 shadow-md'
-          : 'bg-transparent py-5'
+          ? 'bg-white/85 dark:bg-carbon-900/90 backdrop-blur-md py-3 border-b border-paper-200 dark:border-carbon-700/80 shadow-sm'
+          : 'bg-transparent py-5 border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,11 +38,11 @@ export const Navbar: React.FC = () => {
           {/* Logo / Brand */}
           <a
             href="#"
-            className="group flex items-center space-x-2 font-mono font-bold text-lg tracking-tight text-paper-900 dark:text-carbon-100 focus:outline-none"
+            className="group flex items-center space-x-2 font-mono font-bold text-lg tracking-tight text-paper-900 dark:text-carbon-100 focus-visible:ring-2 focus-visible:ring-brand-emerald rounded-lg p-1"
           >
-            <span className="text-brand-emerald">&lt;</span>
-            <span className="group-hover:text-brand-emerald transition-colors">Quinton</span>
-            <span className="text-brand-cyan">/&gt;</span>
+            <span className="text-brand-emerald font-mono">&lt;</span>
+            <span className="group-hover:text-brand-emerald transition-colors font-heading tracking-normal font-bold">Quinton</span>
+            <span className="text-brand-cyan font-mono">/&gt;</span>
           </a>
 
           {/* Desktop Nav Items */}
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="px-3 py-1.5 rounded-lg text-sm font-medium text-paper-700 dark:text-carbon-300 hover:text-brand-emerald dark:hover:text-brand-emerald hover:bg-paper-100 dark:hover:bg-carbon-800 transition-colors"
+                className="px-3.5 py-2 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider text-paper-700 dark:text-carbon-300 hover:text-brand-emerald dark:hover:text-brand-emerald hover:bg-paper-100 dark:hover:bg-carbon-800 transition-colors cursor-pointer"
               >
                 {link.label}
               </a>
@@ -60,11 +60,11 @@ export const Navbar: React.FC = () => {
 
           {/* Right Action Buttons */}
           <div className="hidden md:flex items-center space-x-3">
-            {/* Theme Toggle */}
+            {/* Theme Toggle (Min 44x44px touch target) */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle Dark/Light Mode"
-              className="p-2 rounded-xl border border-paper-200 dark:border-carbon-700 bg-paper-100 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 hover:text-brand-emerald dark:hover:text-brand-emerald transition-colors"
+              className="w-11 h-11 flex items-center justify-center rounded-xl border border-paper-200 dark:border-carbon-700 bg-paper-100 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 hover:text-brand-emerald dark:hover:text-brand-emerald transition-colors cursor-pointer"
             >
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-paper-700" />}
             </button>
@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
               href={profileData.contacts.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/30 hover:bg-brand-emerald hover:text-carbon-950 transition-all shadow-sm"
+              className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/30 hover:bg-brand-emerald hover:text-carbon-950 transition-all shadow-sm cursor-pointer min-h-[44px]"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>WhatsApp</span>
@@ -86,14 +86,14 @@ export const Navbar: React.FC = () => {
             <button
               onClick={toggleTheme}
               aria-label="Toggle Theme"
-              className="p-2 rounded-lg border border-paper-200 dark:border-carbon-700 bg-paper-100 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300"
+              className="w-11 h-11 flex items-center justify-center rounded-xl border border-paper-200 dark:border-carbon-700 bg-paper-100 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 cursor-pointer"
             >
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-paper-700" />}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Open Navigation Menu"
-              className="p-2 rounded-lg border border-paper-200 dark:border-carbon-700 bg-paper-100 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300"
+              className="w-11 h-11 flex items-center justify-center rounded-xl border border-paper-200 dark:border-carbon-700 bg-paper-100 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 cursor-pointer"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -102,24 +102,24 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 pt-3 pb-4 border-t border-paper-200 dark:border-carbon-800 bg-white/95 dark:bg-carbon-900/95 backdrop-blur-md rounded-2xl p-4 shadow-xl">
+          <div className="md:hidden mt-3 pt-3 pb-4 border border-paper-200 dark:border-carbon-700 bg-white/95 dark:bg-carbon-900/95 backdrop-blur-md rounded-2xl p-4 shadow-xl">
             <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2 rounded-lg text-sm font-medium text-paper-800 dark:text-carbon-200 hover:bg-paper-100 dark:hover:bg-carbon-800 hover:text-brand-emerald"
+                  className="px-3.5 py-3 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider text-paper-800 dark:text-carbon-200 hover:bg-paper-100 dark:hover:bg-carbon-800 hover:text-brand-emerald cursor-pointer"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="pt-2 border-t border-paper-200 dark:border-carbon-800 flex items-center justify-between">
+              <div className="pt-2 border-t border-paper-200 dark:border-carbon-800">
                 <a
                   href={profileData.contacts.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 w-full py-2.5 rounded-xl text-xs font-semibold bg-brand-emerald text-carbon-950 shadow-md"
+                  className="flex items-center justify-center space-x-2 w-full py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald text-carbon-950 shadow-md cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Chat on WhatsApp</span>

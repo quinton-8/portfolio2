@@ -29,7 +29,7 @@ export const ContactSection: React.FC = () => {
       particleCount: 50,
       spread: 70,
       origin: { y: 0.8 },
-      colors: ['#10B981', '#06B6D4', '#6366F1'],
+      colors: ['#10B981', '#06B6D4', '#F59E0B'],
     });
   };
 
@@ -63,12 +63,12 @@ export const ContactSection: React.FC = () => {
         <div className="text-center space-y-3 mb-14">
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Let's Build Together</span>
+            <span>[ PROTOCOL // DIRECT_DISPATCH ]</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-mono">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Get In Touch
           </h2>
-          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
             Available for full-time engineering roles, high-concurrency systems contracts, and architectural consulting.
           </p>
         </div>
@@ -83,70 +83,72 @@ export const ContactSection: React.FC = () => {
               href={profileData.contacts.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-5 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 hover:border-brand-emerald dark:hover:border-brand-emerald flex items-center justify-between group transition-all shadow-sm hover:shadow-md"
+              className="p-5 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 hover:border-brand-emerald dark:hover:border-brand-emerald flex items-center justify-between group transition-all shadow-sm hover:shadow-md cursor-pointer min-h-[64px]"
             >
               <div className="flex items-center space-x-4">
-                <div className="p-3 rounded-xl bg-brand-emerald/10 text-brand-emerald group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-emerald/10 text-brand-emerald group-hover:scale-110 transition-transform">
                   <MessageSquare className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-paper-500 dark:text-carbon-400">Direct WhatsApp</div>
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400">Direct WhatsApp</div>
                   <div className="text-base font-bold font-mono text-paper-900 dark:text-carbon-100 group-hover:text-brand-emerald transition-colors">
                     {profileData.contacts.whatsappFormatted}
                   </div>
-                  <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-mono">Instant Chat • Typically replies fast</div>
+                  <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-mono font-medium">Instant Chat • Direct link</div>
                 </div>
               </div>
               <ArrowRight className="w-5 h-5 text-paper-400 dark:text-carbon-500 group-hover:text-brand-emerald group-hover:translate-x-1 transition-all" />
             </a>
 
             {/* Direct Phone Card */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 flex items-center justify-between group transition-all shadow-sm">
+            <div className="p-5 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 flex items-center justify-between group transition-all shadow-sm min-h-[64px]">
               <div className="flex items-center space-x-4">
-                <div className="p-3 rounded-xl bg-brand-cyan/10 text-brand-cyan">
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-cyan/10 text-brand-cyan">
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-paper-500 dark:text-carbon-400">Direct Phone</div>
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400">Direct Voice & SMS</div>
                   <a
                     href={`tel:${profileData.contacts.phone}`}
-                    className="text-base font-bold font-mono text-paper-900 dark:text-carbon-100 hover:text-brand-cyan transition-colors"
+                    className="text-base font-bold font-mono text-paper-900 dark:text-carbon-100 hover:text-brand-cyan transition-colors cursor-pointer"
                   >
                     {profileData.contacts.phoneFormatted}
                   </a>
-                  <div className="text-[11px] text-paper-500 dark:text-carbon-400 font-mono">Voice & SMS</div>
+                  <div className="text-[11px] text-paper-500 dark:text-carbon-400 font-mono">0798621270</div>
                 </div>
               </div>
               <button
                 onClick={handleCopyPhone}
-                className="p-2 rounded-lg bg-paper-100 dark:bg-carbon-800 text-paper-600 dark:text-carbon-400 hover:text-brand-cyan transition-colors"
+                className="w-11 h-11 flex items-center justify-center rounded-lg bg-paper-100 dark:bg-carbon-800 text-paper-600 dark:text-carbon-400 hover:text-brand-cyan transition-colors cursor-pointer"
                 title="Copy phone number"
+                aria-label="Copy phone number"
               >
                 {copiedPhone ? <Check className="w-4 h-4 text-brand-emerald" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
 
             {/* Email Card */}
-            <div className="p-5 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 flex items-center justify-between group transition-all shadow-sm">
+            <div className="p-5 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 flex items-center justify-between group transition-all shadow-sm min-h-[64px]">
               <div className="flex items-center space-x-4 overflow-hidden">
-                <div className="p-3 rounded-xl bg-brand-indigo/10 text-brand-indigo shrink-0">
+                <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-brand-indigo/10 text-brand-indigo shrink-0">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div className="overflow-hidden">
-                  <div className="text-xs font-mono text-paper-500 dark:text-carbon-400">Direct Email</div>
+                  <div className="text-[11px] font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400">Direct Email</div>
                   <a
                     href={`mailto:${profileData.contacts.email}`}
-                    className="text-sm sm:text-base font-bold font-mono text-paper-900 dark:text-carbon-100 hover:text-brand-indigo transition-colors truncate block"
+                    className="text-sm sm:text-base font-bold font-mono text-paper-900 dark:text-carbon-100 hover:text-brand-indigo transition-colors truncate block cursor-pointer"
                   >
                     {profileData.contacts.email}
                   </a>
-                  <div className="text-[11px] text-paper-500 dark:text-carbon-400 font-mono">Click to mail</div>
+                  <div className="text-[11px] text-paper-500 dark:text-carbon-400 font-mono">Click to open mail client</div>
                 </div>
               </div>
               <button
                 onClick={handleCopyEmail}
-                className="p-2 rounded-lg bg-paper-100 dark:bg-carbon-800 text-paper-600 dark:text-carbon-400 hover:text-brand-indigo transition-colors shrink-0"
+                className="w-11 h-11 flex items-center justify-center rounded-lg bg-paper-100 dark:bg-carbon-800 text-paper-600 dark:text-carbon-400 hover:text-brand-indigo transition-colors shrink-0 cursor-pointer"
                 title="Copy email address"
+                aria-label="Copy email address"
               >
                 {copiedEmail ? <Check className="w-4 h-4 text-brand-emerald" /> : <Copy className="w-4 h-4" />}
               </button>
@@ -158,11 +160,11 @@ export const ContactSection: React.FC = () => {
                 href={profileData.contacts.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 hover:border-brand-emerald transition-colors flex items-center space-x-3 group"
+                className="p-4 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 hover:border-brand-emerald transition-colors flex items-center space-x-3 group cursor-pointer min-h-[56px]"
               >
                 <Github className="w-5 h-5 text-paper-800 dark:text-carbon-200 group-hover:text-brand-emerald" />
                 <div className="overflow-hidden">
-                  <div className="text-[10px] font-mono text-paper-500 dark:text-carbon-400">GitHub</div>
+                  <div className="text-[10px] font-mono uppercase text-paper-500 dark:text-carbon-400">GitHub</div>
                   <div className="text-xs font-bold font-mono text-paper-800 dark:text-carbon-200 truncate">
                     @quinton-8
                   </div>
@@ -173,11 +175,11 @@ export const ContactSection: React.FC = () => {
                 href={profileData.contacts.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 hover:border-brand-cyan transition-colors flex items-center space-x-3 group"
+                className="p-4 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 hover:border-brand-cyan transition-colors flex items-center space-x-3 group cursor-pointer min-h-[56px]"
               >
                 <Linkedin className="w-5 h-5 text-paper-800 dark:text-carbon-200 group-hover:text-brand-cyan" />
                 <div className="overflow-hidden">
-                  <div className="text-[10px] font-mono text-paper-500 dark:text-carbon-400">LinkedIn</div>
+                  <div className="text-[10px] font-mono uppercase text-paper-500 dark:text-carbon-400">LinkedIn</div>
                   <div className="text-xs font-bold font-mono text-paper-800 dark:text-carbon-200 truncate">
                     quinton-juma
                   </div>
@@ -189,19 +191,19 @@ export const ContactSection: React.FC = () => {
 
           {/* Right Column: Quick Message Generator */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 shadow-sm">
+            <div className="p-6 sm:p-8 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 shadow-sm">
               <div className="mb-6">
-                <h3 className="text-xl font-bold font-mono text-paper-900 dark:text-carbon-100">
+                <h3 className="text-xl font-bold font-heading text-paper-900 dark:text-carbon-100">
                   Quick Message Composer
                 </h3>
-                <p className="text-xs sm:text-sm text-paper-600 dark:text-carbon-400 mt-1">
-                  Draft a message and send it directly via WhatsApp or your preferred email client.
+                <p className="text-xs sm:text-sm text-paper-600 dark:text-carbon-400 mt-1 font-mono">
+                  Draft a message and dispatch it instantly via WhatsApp or your mail client.
                 </p>
               </div>
 
               <form onSubmit={handleSendWhatsApp} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5">
+                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
                     Your Name or Organization
                   </label>
                   <input
@@ -209,12 +211,12 @@ export const ContactSection: React.FC = () => {
                     value={senderName}
                     onChange={(e) => setSenderName(e.target.value)}
                     placeholder="e.g. Sarah from TechCorp / Collaborator"
-                    className="w-full px-4 py-2.5 rounded-xl bg-paper-50 dark:bg-carbon-900 border border-paper-200 dark:border-carbon-700 text-xs sm:text-sm text-paper-900 dark:text-carbon-100 placeholder-paper-400 dark:placeholder-carbon-600 focus:outline-none focus:border-brand-emerald"
+                    className="w-full px-4 py-3 rounded-lg bg-paper-50 dark:bg-carbon-900 border border-paper-200 dark:border-carbon-700 text-xs sm:text-sm text-paper-900 dark:text-carbon-100 placeholder-paper-400 dark:placeholder-carbon-600 focus:outline-none focus:border-brand-emerald"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5">
+                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
                     Subject / Discussion Topic
                   </label>
                   <input
@@ -222,12 +224,12 @@ export const ContactSection: React.FC = () => {
                     value={senderSubject}
                     onChange={(e) => setSenderSubject(e.target.value)}
                     placeholder="e.g. Full-time Go Engineer Role / Project Consultation"
-                    className="w-full px-4 py-2.5 rounded-xl bg-paper-50 dark:bg-carbon-900 border border-paper-200 dark:border-carbon-700 text-xs sm:text-sm text-paper-900 dark:text-carbon-100 placeholder-paper-400 dark:placeholder-carbon-600 focus:outline-none focus:border-brand-emerald"
+                    className="w-full px-4 py-3 rounded-lg bg-paper-50 dark:bg-carbon-900 border border-paper-200 dark:border-carbon-700 text-xs sm:text-sm text-paper-900 dark:text-carbon-100 placeholder-paper-400 dark:placeholder-carbon-600 focus:outline-none focus:border-brand-emerald"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5">
+                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
                     Message
                   </label>
                   <textarea
@@ -235,15 +237,15 @@ export const ContactSection: React.FC = () => {
                     value={senderMessage}
                     onChange={(e) => setSenderMessage(e.target.value)}
                     placeholder="Tell Quinton about the opportunity, requirements, or timeline..."
-                    className="w-full px-4 py-2.5 rounded-xl bg-paper-50 dark:bg-carbon-900 border border-paper-200 dark:border-carbon-700 text-xs sm:text-sm text-paper-900 dark:text-carbon-100 placeholder-paper-400 dark:placeholder-carbon-600 focus:outline-none focus:border-brand-emerald"
+                    className="w-full px-4 py-3 rounded-lg bg-paper-50 dark:bg-carbon-900 border border-paper-200 dark:border-carbon-700 text-xs sm:text-sm text-paper-900 dark:text-carbon-100 placeholder-paper-400 dark:placeholder-carbon-600 focus:outline-none focus:border-brand-emerald"
                   />
                 </div>
 
-                {/* Send Buttons Row */}
+                {/* Send Buttons Row (Min 44px touch targets) */}
                 <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold bg-brand-emerald hover:bg-emerald-400 text-carbon-950 shadow-md shadow-brand-emerald/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald hover:bg-emerald-400 text-carbon-950 shadow-md shadow-brand-emerald/20 transition-all hover:scale-[1.02] active:scale-[0.98] min-h-[44px] cursor-pointer"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Send via WhatsApp</span>
@@ -252,7 +254,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleSendEmail}
-                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-xs sm:text-sm font-medium bg-paper-100 dark:bg-carbon-800 hover:bg-paper-200 dark:hover:bg-carbon-700 text-paper-800 dark:text-carbon-100 border border-paper-300 dark:border-carbon-700 transition-colors"
+                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-paper-100 dark:bg-carbon-800 hover:bg-paper-200 dark:hover:bg-carbon-700 text-paper-800 dark:text-carbon-100 border border-paper-300 dark:border-carbon-700 transition-colors min-h-[44px] cursor-pointer"
                   >
                     <Mail className="w-4 h-4 text-brand-indigo" />
                     <span>Send via Email</span>

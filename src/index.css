@@ -8,14 +8,33 @@
   }
   
   body {
-    @apply transition-colors duration-200 antialiased font-sans;
+    @apply transition-colors duration-200 antialiased font-sans text-paper-900 dark:text-carbon-100 bg-paper-50 dark:bg-carbon-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+
+  /* Accessible Focus States (Priority 1 in ui-ux-pro-max) */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-emerald ring-offset-2 ring-offset-paper-50 dark:ring-offset-carbon-900;
+  }
+
+  /* Respect User Motion Preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-/* Custom modern scrollbar */
+/* Custom Tactical Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,46 +42,61 @@
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #243350;
+  border-radius: 2px;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #3B4D6E;
 }
 
 .light ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
+  background: #CBD5E1;
+  border-radius: 2px;
 }
 
 .light ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #94A3B8;
 }
 
-/* Glassmorphism utility */
-.glass-panel {
-  @apply backdrop-blur-md bg-white/70 dark:bg-carbon-900/80 border border-paper-200/80 dark:border-carbon-800/80 shadow-sm;
+/* Tactical Engineering Grid Background */
+.tactical-blueprint {
+  background-image: 
+    linear-gradient(to right, rgba(36, 51, 80, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 51, 80, 0.15) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-.glass-card {
-  @apply backdrop-blur-sm bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700/60 shadow-sm hover:border-brand-emerald/40 transition-all duration-200;
+.light .tactical-blueprint {
+  background-image: 
+    linear-gradient(to right, rgba(226, 232, 240, 0.8) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.8) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Terminal scanline effect */
+/* Tactical Panel & Cards */
+.tactical-card {
+  @apply rounded-xl border border-paper-200 dark:border-carbon-700 bg-white dark:bg-carbon-850 shadow-sm transition-all duration-200;
+}
+
+.tactical-card:hover {
+  @apply border-brand-emerald/50 dark:border-brand-emerald/40 shadow-md;
+}
+
+/* Terminal CRT Scanline & HUD Window */
 .terminal-window {
-  @apply font-mono rounded-xl overflow-hidden border border-carbon-700/80 bg-carbon-950 text-carbon-200 shadow-2xl;
-  background-image: radial-gradient(rgba(16, 185, 129, 0.03) 1px, transparent 0);
-  background-size: 24px 24px;
+  @apply font-mono rounded-xl overflow-hidden border border-carbon-700 bg-carbon-950 text-carbon-200 shadow-2xl;
+  background-image: radial-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 0);
+  background-size: 20px 20px;
 }
 
-/* Pulse glow for status badge */
+/* Pulsing Status Indicator */
 @keyframes ping-subtle {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.4); opacity: 0.2; }
-  100% { transform: scale(1); opacity: 0.8; }
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.35); opacity: 0.25; }
+  100% { transform: scale(1); opacity: 0.9; }
 }
 
 .pulse-indicator {
-  animation: ping-subtle 2.5s infinite;
+  animation: ping-subtle 2.2s infinite;
 }
