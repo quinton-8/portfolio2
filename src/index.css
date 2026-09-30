@@ -8,19 +8,28 @@
   }
   
   body {
-    @apply transition-colors duration-200 antialiased font-sans text-paper-900 dark:text-carbon-100 bg-paper-50 dark:bg-carbon-900;
+    @apply transition-colors duration-200 antialiased font-sans text-ink dark:text-carbon-text bg-paper dark:bg-carbon-bg;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
+    @apply tracking-tight font-bold text-ink dark:text-carbon-text;
   }
 
-  /* Accessible Focus States (Priority 1 in ui-ux-pro-max) */
+  /* Accessible Subtle Focus Ring */
   :focus-visible {
-    @apply outline-none ring-2 ring-brand-emerald ring-offset-2 ring-offset-paper-50 dark:ring-offset-carbon-900;
+    @apply outline-none ring-2 ring-brand-emerald/70 ring-offset-2 ring-offset-paper dark:ring-offset-carbon-bg;
   }
 
-  /* Respect User Motion Preferences */
+  /* Micro-UI: Physical Keyboard Key */
+  kbd {
+    @apply font-mono text-[11px] px-1.5 py-0.5 rounded border border-paper-borderStrong bg-paper-subtle text-ink-muted shadow-[0_1px_0_rgba(0,0,0,0.08)];
+  }
+
+  html.dark kbd {
+    @apply border-carbon-borderStrong bg-carbon-subtle text-carbon-muted shadow-[0_1px_0_rgba(255,255,255,0.05)];
+  }
+
+  /* Responsive Motion Preferences */
   @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
       animation-duration: 0.01ms !important;
@@ -31,10 +40,38 @@
   }
 }
 
-/* Custom Tactical Scrollbar */
+@layer components {
+  /* Minimalist Bento Card */
+  .minimal-card, .editorial-card {
+    @apply rounded-xl border border-paper-border dark:border-carbon-border bg-paper-card dark:bg-carbon-card shadow-fine hover:shadow-lift transition-all duration-200;
+  }
+
+  .minimal-card:hover, .editorial-card:hover {
+    @apply border-paper-borderStrong dark:border-carbon-borderStrong;
+  }
+
+  /* Responsive Haptic Action Buttons */
+  .btn-editorial-primary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-ink text-paper font-medium text-xs sm:text-sm tracking-wide transition-all duration-150 ease-out active:scale-[0.97] hover:bg-ink-secondary cursor-pointer min-h-[44px];
+  }
+
+  html.dark .btn-editorial-primary {
+    @apply bg-carbon-text text-carbon-bg hover:bg-white;
+  }
+
+  .btn-editorial-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-paper-card border border-paper-border text-ink font-medium text-xs sm:text-sm tracking-wide transition-all duration-150 ease-out active:scale-[0.97] hover:bg-paper-subtle hover:border-paper-borderStrong cursor-pointer min-h-[44px];
+  }
+
+  html.dark .btn-editorial-secondary {
+    @apply bg-carbon-card border-carbon-border text-carbon-text hover:bg-carbon-subtle hover:border-carbon-borderStrong;
+  }
+}
+
+/* Minimalist Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -42,61 +79,19 @@
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #243350;
-  border-radius: 2px;
+  background: #24272C;
+  border-radius: 9999px;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #3B4D6E;
+  background: #33373E;
 }
 
 .light ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 2px;
+  background: #EAEAEA;
+  border-radius: 9999px;
 }
 
 .light ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
-}
-
-/* Tactical Engineering Grid Background */
-.tactical-blueprint {
-  background-image: 
-    linear-gradient(to right, rgba(36, 51, 80, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(36, 51, 80, 0.15) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-.light .tactical-blueprint {
-  background-image: 
-    linear-gradient(to right, rgba(226, 232, 240, 0.8) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.8) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
-/* Tactical Panel & Cards */
-.tactical-card {
-  @apply rounded-xl border border-paper-200 dark:border-carbon-700 bg-white dark:bg-carbon-850 shadow-sm transition-all duration-200;
-}
-
-.tactical-card:hover {
-  @apply border-brand-emerald/50 dark:border-brand-emerald/40 shadow-md;
-}
-
-/* Terminal CRT Scanline & HUD Window */
-.terminal-window {
-  @apply font-mono rounded-xl overflow-hidden border border-carbon-700 bg-carbon-950 text-carbon-200 shadow-2xl;
-  background-image: radial-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 0);
-  background-size: 20px 20px;
-}
-
-/* Pulsing Status Indicator */
-@keyframes ping-subtle {
-  0% { transform: scale(1); opacity: 0.9; }
-  50% { transform: scale(1.35); opacity: 0.25; }
-  100% { transform: scale(1); opacity: 0.9; }
-}
-
-.pulse-indicator {
-  animation: ping-subtle 2.2s infinite;
+  background: #DCDCD8;
 }
