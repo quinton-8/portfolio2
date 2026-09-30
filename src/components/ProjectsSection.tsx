@@ -3,7 +3,7 @@ import { projectsData } from '../data/portfolioData';
 import { Project, ProjectCategory } from '../types/portfolio';
 import { ProjectCard } from './ProjectCard';
 import { ProjectModal } from './ProjectModal';
-import { Sparkles, Github, ExternalLink, Terminal } from 'lucide-react';
+import { Github, Terminal } from 'lucide-react';
 
 export const ProjectsSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>('All');
@@ -16,34 +16,33 @@ export const ProjectsSection: React.FC = () => {
     : projectsData.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 md:py-28 bg-paper-100/60 dark:bg-carbon-900/60 border-y border-paper-200 dark:border-carbon-750">
+    <section id="projects" className="py-20 md:py-28 border-b border-paper-border dark:border-carbon-border bg-paper-subtle dark:bg-carbon-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div className="space-y-3">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Production Systems & Engines</span>
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 text-xs font-mono text-ink-muted dark:text-carbon-muted uppercase tracking-wider">
+              <span>Engineering Deliverables</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
-              Featured Engineering Projects
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-ink dark:text-carbon-text">
+              Featured Systems & Codebases
             </h2>
-            <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-2xl">
-              From real-time conflict-free tournament matchmaking at <a href="https://efpitch.com" target="_blank" rel="noopener noreferrer" className="text-brand-emerald underline font-semibold cursor-pointer">efpitch.com</a> to unified financial payment SDKs and socket-level Go servers.
+            <p className="text-sm sm:text-base text-ink-muted dark:text-carbon-muted max-w-2xl leading-relaxed">
+              From real-time conflict-free tournament matchmaking at <a href="https://efpitch.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 dark:text-emerald-400 underline font-medium cursor-pointer">efpitch.com</a> to unified financial payment SDKs and socket-level Go servers.
             </p>
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex flex-wrap gap-2 mt-6 md:mt-0 text-xs sm:text-sm">
+          <div className="flex flex-wrap gap-2 text-xs sm:text-sm">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2.5 rounded-xl transition-all cursor-pointer min-h-[44px] ${
+                className={`px-4 py-2 rounded-xl transition-all cursor-pointer min-h-[40px] text-xs sm:text-sm font-medium ${
                   activeCategory === cat
-                    ? 'bg-brand-emerald text-carbon-950 font-bold shadow-md shadow-brand-emerald/20'
-                    : 'bg-white dark:bg-carbon-850 text-paper-700 dark:text-carbon-300 border border-paper-200 dark:border-carbon-700 hover:border-brand-emerald/50'
+                    ? 'bg-ink dark:bg-carbon-text text-paper dark:text-carbon-bg shadow-fine'
+                    : 'bg-paper-card dark:bg-carbon-card text-ink-muted dark:text-carbon-muted border border-paper-border dark:border-carbon-border hover:border-paper-borderStrong dark:hover:border-carbon-borderStrong'
                 }`}
               >
                 {cat}
@@ -64,16 +63,16 @@ export const ProjectsSection: React.FC = () => {
         </div>
 
         {/* GitHub Repositories Banner */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-paper-card dark:bg-carbon-card border border-paper-border dark:border-carbon-border flex flex-col sm:flex-row items-center justify-between gap-6 shadow-fine">
           <div className="space-y-1.5 text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start space-x-2 text-xs text-brand-emerald font-semibold">
+            <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs text-ink-muted dark:text-carbon-muted font-mono uppercase tracking-wider">
               <Terminal className="w-3.5 h-3.5" />
-              <span>GitHub Repositories</span>
+              <span>Open Source & Peer Codebases</span>
             </div>
-            <h3 className="text-lg font-bold text-paper-900 dark:text-carbon-100 font-heading">
-              Looking for more codebases & open-source tools?
+            <h3 className="text-lg font-bold text-ink dark:text-carbon-text">
+              Looking for more repositories and algorithms?
             </h3>
-            <p className="text-xs sm:text-sm text-paper-600 dark:text-carbon-400">
+            <p className="text-xs sm:text-sm text-ink-muted dark:text-carbon-muted">
               Explore 29+ repositories covering PWA offline algorithms, Go utilities, open-source documentation, and Zone01 peer assignments.
             </p>
           </div>
@@ -81,7 +80,7 @@ export const ProjectsSection: React.FC = () => {
             href="https://github.com/quinton-8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-sm font-semibold bg-paper-900 dark:bg-carbon-100 text-white dark:text-carbon-950 hover:bg-brand-emerald dark:hover:bg-brand-emerald dark:hover:text-carbon-950 transition-all shrink-0 shadow min-h-[44px] cursor-pointer"
+            className="btn-editorial-primary shrink-0"
           >
             <Github className="w-4 h-4" />
             <span>Visit @quinton-8 on GitHub</span>

@@ -28,36 +28,37 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-carbon-950/80 backdrop-blur-sm transition-opacity cursor-pointer"
+        className="fixed inset-0 bg-ink/60 dark:bg-carbon-bg/85 backdrop-blur-sm transition-opacity cursor-pointer"
         onClick={onClose}
       />
 
       {/* Modal Dialog */}
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white dark:bg-carbon-900 border border-paper-200 dark:border-carbon-700 shadow-2xl z-10 p-6 sm:p-8">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl bg-paper-card dark:bg-carbon-card border border-paper-border dark:border-carbon-border shadow-lift z-10 p-6 sm:p-8">
+        
         {/* Header */}
-        <div className="flex items-start justify-between pb-4 border-b border-paper-200 dark:border-carbon-800">
+        <div className="flex items-start justify-between pb-4 border-b border-paper-border dark:border-carbon-border">
           <div>
-            <div className="flex items-center space-x-2">
-              <span className="px-2.5 py-0.5 rounded text-xs font-semibold bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-medium bg-paper-subtle dark:bg-carbon-subtle text-ink-muted dark:text-carbon-muted border border-paper-border dark:border-carbon-border">
                 {project.category}
               </span>
               {project.liveUrl && (
-                <span className="px-2.5 py-0.5 rounded text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
                   Live in Production
                 </span>
               )}
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-paper-900 dark:text-carbon-100 mt-2 font-heading tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink dark:text-carbon-text mt-2">
               {project.title}
             </h3>
-            <p className="text-sm text-paper-600 dark:text-carbon-400 mt-1">
+            <p className="text-sm text-ink-secondary dark:text-carbon-muted mt-1">
               {project.subtitle}
             </p>
           </div>
 
           <button
             onClick={onClose}
-            className="w-11 h-11 flex items-center justify-center rounded-xl border border-paper-200 dark:border-carbon-700 text-paper-500 dark:text-carbon-400 hover:text-paper-900 dark:hover:text-carbon-100 hover:bg-paper-100 dark:hover:bg-carbon-800 transition-colors cursor-pointer"
+            className="w-10 h-10 flex items-center justify-center rounded-xl border border-paper-border dark:border-carbon-border text-ink-muted dark:text-carbon-muted hover:text-ink dark:hover:text-carbon-text hover:bg-paper-subtle dark:hover:bg-carbon-subtle transition-colors cursor-pointer"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -68,28 +69,30 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="py-6 space-y-6">
           {/* Main Description */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-2">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-ink-muted dark:text-carbon-muted mb-2">
               System Overview
             </h4>
-            <p className="text-sm sm:text-base text-paper-700 dark:text-carbon-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-ink dark:text-carbon-text leading-relaxed">
               {project.description}
             </p>
           </div>
 
           {/* Metrics Grid */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-3 flex items-center space-x-1.5">
-              <Cpu className="w-3.5 h-3.5 text-brand-emerald" />
+            <h4 className="text-xs font-mono uppercase tracking-wider text-ink-muted dark:text-carbon-muted mb-3 flex items-center gap-1.5">
+              <Cpu className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
               <span>Architecture Metrics</span>
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {project.metrics.map((metric, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-xl bg-paper-50 dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 text-center"
+                  className="p-3.5 rounded-xl bg-paper-subtle dark:bg-carbon-subtle border border-paper-border dark:border-carbon-border text-center"
                 >
-                  <div className="text-[11px] uppercase tracking-wider text-paper-500 dark:text-carbon-400">{metric.label}</div>
-                  <div className="text-base sm:text-lg font-bold text-brand-emerald mt-0.5">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-ink-faint dark:text-carbon-muted">
+                    {metric.label}
+                  </div>
+                  <div className="text-base sm:text-lg font-bold text-ink dark:text-carbon-text font-mono mt-0.5">
                     {metric.value}
                   </div>
                 </div>
@@ -99,14 +102,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Architectural Innovations */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-3 flex items-center space-x-1.5">
-              <Layers className="w-3.5 h-3.5 text-brand-cyan" />
+            <h4 className="text-xs font-mono uppercase tracking-wider text-ink-muted dark:text-carbon-muted mb-3 flex items-center gap-1.5">
+              <Layers className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
               <span>Key Architectural Decisions</span>
             </h4>
             <div className="space-y-2.5">
               {project.architectureDetails.map((detail, idx) => (
-                <div key={idx} className="flex items-start space-x-3 text-xs sm:text-sm text-paper-700 dark:text-carbon-300">
-                  <CheckCircle2 className="w-4 h-4 text-brand-emerald mt-0.5 shrink-0" />
+                <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-ink-secondary dark:text-carbon-muted">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
                   <span>{detail}</span>
                 </div>
               ))}
@@ -115,14 +118,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Tech Stack Pills */}
           <div>
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-2">
+            <h4 className="text-xs font-mono uppercase tracking-wider text-ink-muted dark:text-carbon-muted mb-2">
               Technologies & Protocols
             </h4>
             <div className="flex flex-wrap gap-1.5 text-xs">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-1 rounded bg-paper-100 dark:bg-carbon-800 text-paper-800 dark:text-carbon-200 border border-paper-200 dark:border-carbon-700 font-medium"
+                  className="px-2.5 py-1 rounded bg-paper-subtle dark:bg-carbon-subtle text-ink dark:text-carbon-text border border-paper-border dark:border-carbon-border font-mono text-[11px]"
                 >
                   {tag}
                 </span>
@@ -131,15 +134,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
         </div>
 
-        {/* Footer Actions with 44px min touch target */}
-        <div className="pt-4 border-t border-paper-200 dark:border-carbon-800 flex flex-wrap items-center justify-between gap-3">
-          <div className="flex items-center space-x-3">
+        {/* Footer Actions */}
+        <div className="pt-4 border-t border-paper-border dark:border-carbon-border flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-sm font-semibold bg-brand-emerald hover:bg-emerald-400 text-carbon-950 transition-colors shadow-md min-h-[44px] cursor-pointer"
+                className="btn-editorial-primary"
               >
                 <span>Visit Platform</span>
                 <ExternalLink className="w-4 h-4" />
@@ -150,7 +153,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-4 py-3 rounded-xl text-sm font-semibold bg-paper-100 dark:bg-carbon-800 hover:bg-paper-200 dark:hover:bg-carbon-700 text-paper-800 dark:text-carbon-200 border border-paper-300 dark:border-carbon-700 transition-colors min-h-[44px] cursor-pointer"
+                className="btn-editorial-secondary"
               >
                 <Github className="w-4 h-4" />
                 <span>GitHub Source</span>
@@ -160,7 +163,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           <button
             onClick={onClose}
-            className="text-xs uppercase font-medium text-paper-500 dark:text-carbon-400 hover:text-paper-900 dark:hover:text-carbon-100 cursor-pointer py-2"
+            className="text-xs font-mono uppercase text-ink-muted dark:text-carbon-muted hover:text-ink dark:hover:text-carbon-text cursor-pointer py-2"
           >
             Close (Esc)
           </button>
