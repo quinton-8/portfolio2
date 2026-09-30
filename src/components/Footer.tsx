@@ -8,18 +8,18 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="border-t border-paper-200 dark:border-carbon-750 bg-white dark:bg-carbon-950 py-12 text-xs font-mono">
+    <footer className="border-t border-paper-200 dark:border-carbon-750 bg-white dark:bg-carbon-950 py-12 text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Brand & Note */}
           <div className="space-y-1.5 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start space-x-2 font-bold text-base text-paper-900 dark:text-carbon-100">
-              <span className="text-brand-emerald">&lt;</span>
-              <span className="font-heading tracking-normal">{profileData.name}</span>
-              <span className="text-brand-cyan">/&gt;</span>
+              <span className="text-brand-emerald font-mono">&lt;</span>
+              <span className="tracking-normal">{profileData.name}</span>
+              <span className="text-brand-cyan font-mono">/&gt;</span>
             </div>
-            <p className="text-paper-500 dark:text-carbon-400">
+            <p className="text-xs sm:text-sm text-paper-500 dark:text-carbon-400">
               Telecommunications Engineering (Kabarak) • Software Engineering Fellow (Zone01 Kisumu)
             </p>
           </div>
@@ -70,8 +70,8 @@ export const Footer: React.FC = () => {
           <div>
             © {new Date().getFullYear()} Quinton Juma. All rights reserved.
           </div>
-          <div className="flex items-center space-x-1 text-paper-500 dark:text-carbon-400">
-            <span>[ SYSTEM: ENGINE_ONLINE // KISUMU_KENYA ]</span>
+          <div className="flex items-center space-x-1 text-paper-500 dark:text-carbon-400 text-xs">
+            <span>Kisumu, Kenya • Available Globally</span>
           </div>
         </div>
       </div>

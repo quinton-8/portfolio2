@@ -31,20 +31,20 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             {/* Status Pill with Telemetry Formatting */}
-            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 dark:bg-brand-emerald/15 text-emerald-700 dark:text-emerald-400 border border-brand-emerald/30 shadow-sm">
+            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-brand-emerald/10 dark:bg-brand-emerald/15 text-emerald-700 dark:text-emerald-400 border border-brand-emerald/30 shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="pulse-indicator absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-emerald"></span>
               </span>
-              <span className="tracking-wide uppercase font-semibold">[ STATUS: ACTIVE & AVAILABLE ]</span>
+              <span className="tracking-wide uppercase font-semibold">Active & Available for Work</span>
             </div>
 
-            {/* Main Name & Title with Space Grotesk Architecture */}
+            {/* Main Name & Title */}
             <div className="space-y-3">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
                 Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-emerald via-emerald-400 to-brand-cyan">{profileData.name}</span>
               </h1>
-              <p className="text-lg sm:text-2xl font-mono font-semibold text-paper-700 dark:text-carbon-300">
+              <p className="text-lg sm:text-2xl font-semibold text-paper-700 dark:text-carbon-300">
                 {profileData.roleTitle}
               </p>
             </div>
@@ -54,12 +54,12 @@ export const Hero: React.FC = () => {
               Engineering high-throughput <strong className="text-paper-900 dark:text-carbon-100 font-semibold">Go systems</strong>, modern <strong className="text-paper-900 dark:text-carbon-100 font-semibold">Next.js frontends</strong>, and resilient FinTech platforms. Grounded in <strong className="text-paper-900 dark:text-carbon-100 font-semibold">Telecommunications Engineering</strong> from Kabarak University and hardened through peer-driven systems development at <strong className="text-paper-900 dark:text-carbon-100 font-semibold">Zone01 Kisumu</strong>.
             </p>
 
-            {/* Key Action Buttons (All min-h-[44px] for Touch Compliance) */}
+            {/* Key Action Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
               {/* Explore Projects Button */}
               <a
                 href="#projects"
-                className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald hover:bg-emerald-400 text-carbon-950 shadow-lg shadow-brand-emerald/20 transition-all hover:scale-[1.02] active:scale-[0.98] min-h-[44px] cursor-pointer"
+                className="inline-flex items-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold bg-brand-emerald hover:bg-emerald-400 text-carbon-950 shadow-lg shadow-brand-emerald/20 transition-all hover:scale-[1.02] active:scale-[0.98] min-h-[44px] cursor-pointer"
               >
                 <span>View Projects</span>
                 <ArrowDown className="w-4 h-4" />
@@ -70,7 +70,7 @@ export const Hero: React.FC = () => {
                 href={profileData.contacts.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-white dark:bg-carbon-850 hover:bg-paper-100 dark:hover:bg-carbon-800 text-paper-800 dark:text-carbon-100 border border-paper-300 dark:border-carbon-700 transition-all hover:scale-[1.02] min-h-[44px] cursor-pointer"
+                className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-sm font-semibold bg-white dark:bg-carbon-850 hover:bg-paper-100 dark:hover:bg-carbon-800 text-paper-800 dark:text-carbon-100 border border-paper-300 dark:border-carbon-700 transition-all hover:scale-[1.02] min-h-[44px] cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 text-brand-emerald" />
                 <span>WhatsApp</span>
@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
               {/* Copy Email Button */}
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center space-x-2 px-4 py-3 rounded-xl text-xs font-mono font-semibold uppercase tracking-wider bg-white dark:bg-carbon-850 hover:bg-paper-100 dark:hover:bg-carbon-800 text-paper-700 dark:text-carbon-300 border border-paper-300 dark:border-carbon-700 transition-all min-h-[44px] cursor-pointer"
+                className="inline-flex items-center space-x-2 px-4 py-3 rounded-xl text-sm font-semibold bg-white dark:bg-carbon-850 hover:bg-paper-100 dark:hover:bg-carbon-800 text-paper-700 dark:text-carbon-300 border border-paper-300 dark:border-carbon-700 transition-all min-h-[44px] cursor-pointer"
                 title="Copy email address"
               >
                 {copiedEmail ? (
@@ -119,9 +119,9 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Quick terminal jump tip */}
-            <div className="pt-2 text-xs font-mono text-paper-500 dark:text-carbon-400 flex items-center justify-center lg:justify-start space-x-2">
+            <div className="pt-2 text-xs text-paper-500 dark:text-carbon-400 flex items-center justify-center lg:justify-start space-x-2">
               <Terminal className="w-3.5 h-3.5 text-brand-emerald" />
-              <span>Type <kbd className="px-1.5 py-0.5 rounded bg-paper-200 dark:bg-carbon-800 text-paper-800 dark:text-carbon-200 border border-paper-300 dark:border-carbon-700 font-bold">help</kbd> in the <a href="#terminal" className="text-brand-emerald hover:underline">Zone01 Terminal</a> below to test system routines.</span>
+              <span>Type <kbd className="px-1.5 py-0.5 rounded bg-paper-200 dark:bg-carbon-800 text-paper-800 dark:text-carbon-200 border border-paper-300 dark:border-carbon-700 font-bold font-mono">help</kbd> in the <a href="#terminal" className="text-brand-emerald hover:underline">Zone01 Terminal</a> below to test system routines.</span>
             </div>
           </div>
 
@@ -153,17 +153,17 @@ export const Hero: React.FC = () => {
                   />
                   
                   {/* Floating Badges */}
-                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-[11px] backdrop-blur-md bg-carbon-950/85 px-3 py-1.5 rounded-lg border border-carbon-700 text-carbon-200 font-mono">
+                  <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between text-xs backdrop-blur-md bg-carbon-950/85 px-3 py-1.5 rounded-lg border border-carbon-700 text-carbon-200">
                     <span className="flex items-center space-x-1.5">
                       <span className="w-2 h-2 rounded-full bg-brand-emerald"></span>
                       <span>Zone01 Kisumu</span>
                     </span>
-                    <span className="text-brand-cyan font-bold">Kabarak Eng</span>
+                    <span className="text-brand-cyan font-semibold">Kabarak Eng</span>
                   </div>
                 </div>
 
                 {/* Profile Meta Cards */}
-                <div className="space-y-2 font-mono text-xs">
+                <div className="space-y-2 text-xs">
                   <div className="flex items-center justify-between p-2.5 rounded-lg bg-paper-50 dark:bg-carbon-900 border border-paper-200 dark:border-carbon-800 text-paper-700 dark:text-carbon-300">
                     <span className="text-paper-500 dark:text-carbon-400">Current Base:</span>
                     <span className="font-semibold text-paper-900 dark:text-carbon-100">{profileData.location}</span>
@@ -199,14 +199,14 @@ export const Hero: React.FC = () => {
               key={i}
               className="p-5 rounded-xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700/80 shadow-sm hover:border-brand-emerald/40 transition-colors"
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-paper-900 dark:text-carbon-100 font-mono">
+              <div className="text-2xl sm:text-3xl font-extrabold text-paper-900 dark:text-carbon-100">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-bold text-paper-700 dark:text-carbon-300 mt-1 uppercase font-mono tracking-wide">
+              <div className="text-xs sm:text-sm font-semibold text-paper-700 dark:text-carbon-300 mt-1 uppercase tracking-wide">
                 {stat.label}
               </div>
               {stat.sublabel && (
-                <div className="text-[11px] text-paper-500 dark:text-carbon-400 mt-0.5 font-mono">
+                <div className="text-xs text-paper-500 dark:text-carbon-400 mt-0.5">
                   {stat.sublabel}
                 </div>
               )}

@@ -38,10 +38,10 @@ export const Navbar: React.FC = () => {
           {/* Logo / Brand */}
           <a
             href="#"
-            className="group flex items-center space-x-2 font-mono font-bold text-lg tracking-tight text-paper-900 dark:text-carbon-100 focus-visible:ring-2 focus-visible:ring-brand-emerald rounded-lg p-1"
+            className="group flex items-center space-x-2 font-bold text-lg tracking-tight text-paper-900 dark:text-carbon-100 focus-visible:ring-2 focus-visible:ring-brand-emerald rounded-lg p-1"
           >
             <span className="text-brand-emerald font-mono">&lt;</span>
-            <span className="group-hover:text-brand-emerald transition-colors font-heading tracking-normal font-bold">Quinton</span>
+            <span className="group-hover:text-brand-emerald transition-colors tracking-normal font-bold">Quinton</span>
             <span className="text-brand-cyan font-mono">/&gt;</span>
           </a>
 
@@ -51,7 +51,7 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="px-3.5 py-2 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider text-paper-700 dark:text-carbon-300 hover:text-brand-emerald dark:hover:text-brand-emerald hover:bg-paper-100 dark:hover:bg-carbon-800 transition-colors cursor-pointer"
+                className="px-3.5 py-2 rounded-lg text-sm font-medium text-paper-700 dark:text-carbon-300 hover:text-brand-emerald dark:hover:text-brand-emerald hover:bg-paper-100 dark:hover:bg-carbon-800 transition-colors cursor-pointer"
               >
                 {link.label}
               </a>
@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
               href={profileData.contacts.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/30 hover:bg-brand-emerald hover:text-carbon-950 transition-all shadow-sm cursor-pointer min-h-[44px]"
+              className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/30 hover:bg-brand-emerald hover:text-carbon-950 transition-all shadow-sm cursor-pointer min-h-[44px]"
             >
               <MessageSquare className="w-3.5 h-3.5" />
               <span>WhatsApp</span>
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="px-3.5 py-3 rounded-lg text-xs font-mono font-semibold uppercase tracking-wider text-paper-800 dark:text-carbon-200 hover:bg-paper-100 dark:hover:bg-carbon-800 hover:text-brand-emerald cursor-pointer"
+                  className="px-3.5 py-3 rounded-lg text-sm font-medium text-paper-800 dark:text-carbon-200 hover:bg-paper-100 dark:hover:bg-carbon-800 hover:text-brand-emerald cursor-pointer"
                 >
                   {link.label}
                 </a>
@@ -119,7 +119,7 @@ export const Navbar: React.FC = () => {
                   href={profileData.contacts.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 w-full py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald text-carbon-950 shadow-md cursor-pointer"
+                  className="flex items-center justify-center space-x-2 w-full py-3 rounded-xl text-sm font-semibold bg-brand-emerald text-carbon-950 shadow-md cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Chat on WhatsApp</span>

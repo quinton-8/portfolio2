@@ -22,19 +22,19 @@ export const SkillsMatrix: React.FC = () => {
     switch (level) {
       case 'Mastery':
         return (
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-emerald/15 text-emerald-700 dark:text-emerald-400 border border-brand-emerald/30 font-bold uppercase tracking-wider">
+          <span className="text-[11px] px-2 py-0.5 rounded bg-brand-emerald/15 text-emerald-700 dark:text-emerald-400 border border-brand-emerald/30 font-semibold uppercase tracking-wider">
             Mastery
           </span>
         );
       case 'Advanced':
         return (
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-cyan/15 text-cyan-700 dark:text-cyan-400 border border-brand-cyan/30 font-bold uppercase tracking-wider">
+          <span className="text-[11px] px-2 py-0.5 rounded bg-brand-cyan/15 text-cyan-700 dark:text-cyan-400 border border-brand-cyan/30 font-semibold uppercase tracking-wider">
             Advanced
           </span>
         );
       case 'Proficient':
         return (
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-paper-200 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 border border-paper-300 dark:border-carbon-700 font-medium uppercase tracking-wider">
+          <span className="text-[11px] px-2 py-0.5 rounded bg-paper-200 dark:bg-carbon-800 text-paper-700 dark:text-carbon-300 border border-paper-300 dark:border-carbon-700 font-medium uppercase tracking-wider">
             Proficient
           </span>
         );
@@ -49,14 +49,14 @@ export const SkillsMatrix: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-3 mb-14">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
             <Code2 className="w-3.5 h-3.5" />
-            <span>[ SYSTEM_CAPABILITIES // ARSENAL ]</span>
+            <span>Technical Capabilities</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Skills & Architectural Toolkit
           </h2>
-          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
+          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto">
             High-density systems programming in Go, modern Next.js client engineering, and production-tested API architectures.
           </p>
         </div>
@@ -77,7 +77,7 @@ export const SkillsMatrix: React.FC = () => {
                   <h3 className="text-lg sm:text-xl font-bold font-heading text-paper-900 dark:text-carbon-100">
                     {category.title}
                   </h3>
-                  <p className="text-xs text-paper-500 dark:text-carbon-400 font-mono">
+                  <p className="text-xs sm:text-sm text-paper-500 dark:text-carbon-400">
                     {category.description}
                   </p>
                 </div>
@@ -92,13 +92,13 @@ export const SkillsMatrix: React.FC = () => {
                   >
                     <div className="flex items-center space-x-2.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald"></div>
-                      <span className="text-xs sm:text-sm font-semibold font-mono text-paper-900 dark:text-carbon-100">
+                      <span className="text-xs sm:text-sm font-semibold text-paper-900 dark:text-carbon-100">
                         {skill.name}
                       </span>
                     </div>
 
                     <div className="flex items-center space-x-2">
-                      <span className="text-[11px] text-paper-500 dark:text-carbon-400 font-mono hidden sm:inline">
+                      <span className="text-xs text-paper-500 dark:text-carbon-400 hidden sm:inline">
                         {skill.category}
                       </span>
                       {getLevelBadge(skill.level)}

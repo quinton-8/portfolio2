@@ -236,14 +236,14 @@ export const Zone01Terminal: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-3 mb-10">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
             <Terminal className="w-3.5 h-3.5" />
-            <span>[ SHELL // ENVIRONMENT_V2 ]</span>
+            <span>Interactive Terminal</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Zone01 Developer Terminal
           </h2>
-          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
+          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto">
             Inspect Quinton's system architectures, production platforms, and telecommunications background via interactive CLI.
           </p>
         </div>

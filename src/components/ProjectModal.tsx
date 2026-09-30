@@ -38,19 +38,19 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="flex items-start justify-between pb-4 border-b border-paper-200 dark:border-carbon-800">
           <div>
             <div className="flex items-center space-x-2">
-              <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
-                [ {project.category} ]
+              <span className="px-2.5 py-0.5 rounded text-xs font-semibold bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+                {project.category}
               </span>
               {project.liveUrl && (
-                <span className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                  LIVE_IN_PRODUCTION
+                <span className="px-2.5 py-0.5 rounded text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  Live in Production
                 </span>
               )}
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-paper-900 dark:text-carbon-100 mt-2 font-heading tracking-tight">
               {project.title}
             </h3>
-            <p className="text-sm font-mono text-paper-600 dark:text-carbon-400 mt-1">
+            <p className="text-sm text-paper-600 dark:text-carbon-400 mt-1">
               {project.subtitle}
             </p>
           </div>
@@ -68,8 +68,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="py-6 space-y-6">
           {/* Main Description */}
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-2">
-              // SYSTEM_OVERVIEW
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-2">
+              System Overview
             </h4>
             <p className="text-sm sm:text-base text-paper-700 dark:text-carbon-300 leading-relaxed">
               {project.description}
@@ -78,17 +78,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Metrics Grid */}
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-3 flex items-center space-x-1.5">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-3 flex items-center space-x-1.5">
               <Cpu className="w-3.5 h-3.5 text-brand-emerald" />
-              <span>// ARCHITECTURE_METRICS</span>
+              <span>Architecture Metrics</span>
             </h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {project.metrics.map((metric, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-xl bg-paper-50 dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 text-center font-mono"
+                  className="p-3.5 rounded-xl bg-paper-50 dark:bg-carbon-850 border border-paper-200 dark:border-carbon-800 text-center"
                 >
-                  <div className="text-[10px] uppercase tracking-wider text-paper-500 dark:text-carbon-400">{metric.label}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-paper-500 dark:text-carbon-400">{metric.label}</div>
                   <div className="text-base sm:text-lg font-bold text-brand-emerald mt-0.5">
                     {metric.value}
                   </div>
@@ -99,9 +99,9 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Architectural Innovations */}
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-3 flex items-center space-x-1.5">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-3 flex items-center space-x-1.5">
               <Layers className="w-3.5 h-3.5 text-brand-cyan" />
-              <span>// KEY_ARCHITECTURAL_DECISIONS</span>
+              <span>Key Architectural Decisions</span>
             </h4>
             <div className="space-y-2.5">
               {project.architectureDetails.map((detail, idx) => (
@@ -115,14 +115,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Tech Stack Pills */}
           <div>
-            <h4 className="text-xs font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-2">
-              // TECHNOLOGIES_AND_PROTOCOLS
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-paper-500 dark:text-carbon-400 mb-2">
+              Technologies & Protocols
             </h4>
-            <div className="flex flex-wrap gap-1.5 font-mono text-xs">
+            <div className="flex flex-wrap gap-1.5 text-xs">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-1 rounded bg-paper-100 dark:bg-carbon-800 text-paper-800 dark:text-carbon-200 border border-paper-200 dark:border-carbon-700"
+                  className="px-2.5 py-1 rounded bg-paper-100 dark:bg-carbon-800 text-paper-800 dark:text-carbon-200 border border-paper-200 dark:border-carbon-700 font-medium"
                 >
                   {tag}
                 </span>
@@ -139,7 +139,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald hover:bg-emerald-400 text-carbon-950 transition-colors shadow-md min-h-[44px] cursor-pointer"
+                className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-sm font-semibold bg-brand-emerald hover:bg-emerald-400 text-carbon-950 transition-colors shadow-md min-h-[44px] cursor-pointer"
               >
                 <span>Visit Platform</span>
                 <ExternalLink className="w-4 h-4" />
@@ -150,7 +150,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 px-4 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-paper-100 dark:bg-carbon-800 hover:bg-paper-200 dark:hover:bg-carbon-700 text-paper-800 dark:text-carbon-200 border border-paper-300 dark:border-carbon-700 transition-colors min-h-[44px] cursor-pointer"
+                className="inline-flex items-center space-x-2 px-4 py-3 rounded-xl text-sm font-semibold bg-paper-100 dark:bg-carbon-800 hover:bg-paper-200 dark:hover:bg-carbon-700 text-paper-800 dark:text-carbon-200 border border-paper-300 dark:border-carbon-700 transition-colors min-h-[44px] cursor-pointer"
               >
                 <Github className="w-4 h-4" />
                 <span>GitHub Source</span>
@@ -160,7 +160,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           <button
             onClick={onClose}
-            className="text-xs font-mono uppercase text-paper-500 dark:text-carbon-400 hover:text-paper-900 dark:hover:text-carbon-100 cursor-pointer py-2"
+            className="text-xs uppercase font-medium text-paper-500 dark:text-carbon-400 hover:text-paper-900 dark:hover:text-carbon-100 cursor-pointer py-2"
           >
             Close (Esc)
           </button>

@@ -61,14 +61,14 @@ export const ContactSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-3 mb-14">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>[ PROTOCOL // DIRECT_DISPATCH ]</span>
+            <span>Direct Communications</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Get In Touch
           </h2>
-          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
+          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto">
             Available for full-time engineering roles, high-concurrency systems contracts, and architectural consulting.
           </p>
         </div>
@@ -90,11 +90,11 @@ export const ContactSection: React.FC = () => {
                   <MessageSquare className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400">Direct WhatsApp</div>
-                  <div className="text-base font-bold font-mono text-paper-900 dark:text-carbon-100 group-hover:text-brand-emerald transition-colors">
+                  <div className="text-xs uppercase tracking-wider text-paper-500 dark:text-carbon-400 font-medium">Direct WhatsApp</div>
+                  <div className="text-base font-bold text-paper-900 dark:text-carbon-100 group-hover:text-brand-emerald transition-colors">
                     {profileData.contacts.whatsappFormatted}
                   </div>
-                  <div className="text-[11px] text-emerald-600 dark:text-emerald-400 font-mono font-medium">Instant Chat • Direct link</div>
+                  <div className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Instant Chat • Direct link</div>
                 </div>
               </div>
               <ArrowRight className="w-5 h-5 text-paper-400 dark:text-carbon-500 group-hover:text-brand-emerald group-hover:translate-x-1 transition-all" />
@@ -107,14 +107,14 @@ export const ContactSection: React.FC = () => {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400">Direct Voice & SMS</div>
+                  <div className="text-xs uppercase tracking-wider text-paper-500 dark:text-carbon-400 font-medium">Direct Voice & SMS</div>
                   <a
                     href={`tel:${profileData.contacts.phone}`}
-                    className="text-base font-bold font-mono text-paper-900 dark:text-carbon-100 hover:text-brand-cyan transition-colors cursor-pointer"
+                    className="text-base font-bold text-paper-900 dark:text-carbon-100 hover:text-brand-cyan transition-colors cursor-pointer"
                   >
                     {profileData.contacts.phoneFormatted}
                   </a>
-                  <div className="text-[11px] text-paper-500 dark:text-carbon-400 font-mono">0798621270</div>
+                  <div className="text-xs text-paper-500 dark:text-carbon-400">0798621270</div>
                 </div>
               </div>
               <button
@@ -134,14 +134,14 @@ export const ContactSection: React.FC = () => {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div className="overflow-hidden">
-                  <div className="text-[11px] font-mono uppercase tracking-wider text-paper-500 dark:text-carbon-400">Direct Email</div>
+                  <div className="text-xs uppercase tracking-wider text-paper-500 dark:text-carbon-400 font-medium">Direct Email</div>
                   <a
                     href={`mailto:${profileData.contacts.email}`}
-                    className="text-sm sm:text-base font-bold font-mono text-paper-900 dark:text-carbon-100 hover:text-brand-indigo transition-colors truncate block cursor-pointer"
+                    className="text-sm sm:text-base font-bold text-paper-900 dark:text-carbon-100 hover:text-brand-indigo transition-colors truncate block cursor-pointer"
                   >
                     {profileData.contacts.email}
                   </a>
-                  <div className="text-[11px] text-paper-500 dark:text-carbon-400 font-mono">Click to open mail client</div>
+                  <div className="text-xs text-paper-500 dark:text-carbon-400">Click to open mail client</div>
                 </div>
               </div>
               <button
@@ -164,8 +164,8 @@ export const ContactSection: React.FC = () => {
               >
                 <Github className="w-5 h-5 text-paper-800 dark:text-carbon-200 group-hover:text-brand-emerald" />
                 <div className="overflow-hidden">
-                  <div className="text-[10px] font-mono uppercase text-paper-500 dark:text-carbon-400">GitHub</div>
-                  <div className="text-xs font-bold font-mono text-paper-800 dark:text-carbon-200 truncate">
+                  <div className="text-[10px] uppercase text-paper-500 dark:text-carbon-400 font-semibold">GitHub</div>
+                  <div className="text-xs font-bold text-paper-800 dark:text-carbon-200 truncate">
                     @quinton-8
                   </div>
                 </div>
@@ -179,8 +179,8 @@ export const ContactSection: React.FC = () => {
               >
                 <Linkedin className="w-5 h-5 text-paper-800 dark:text-carbon-200 group-hover:text-brand-cyan" />
                 <div className="overflow-hidden">
-                  <div className="text-[10px] font-mono uppercase text-paper-500 dark:text-carbon-400">LinkedIn</div>
-                  <div className="text-xs font-bold font-mono text-paper-800 dark:text-carbon-200 truncate">
+                  <div className="text-[10px] uppercase text-paper-500 dark:text-carbon-400 font-semibold">LinkedIn</div>
+                  <div className="text-xs font-bold text-paper-800 dark:text-carbon-200 truncate">
                     quinton-juma
                   </div>
                 </div>
@@ -196,14 +196,14 @@ export const ContactSection: React.FC = () => {
                 <h3 className="text-xl font-bold font-heading text-paper-900 dark:text-carbon-100">
                   Quick Message Composer
                 </h3>
-                <p className="text-xs sm:text-sm text-paper-600 dark:text-carbon-400 mt-1 font-mono">
+                <p className="text-xs sm:text-sm text-paper-600 dark:text-carbon-400 mt-1">
                   Draft a message and dispatch it instantly via WhatsApp or your mail client.
                 </p>
               </div>
 
               <form onSubmit={handleSendWhatsApp} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-medium text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
                     Your Name or Organization
                   </label>
                   <input
@@ -216,7 +216,7 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-medium text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
                     Subject / Discussion Topic
                   </label>
                   <input
@@ -229,7 +229,7 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
+                  <label className="block text-xs font-medium text-paper-700 dark:text-carbon-300 mb-1.5 uppercase tracking-wider">
                     Message
                   </label>
                   <textarea
@@ -245,7 +245,7 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                   <button
                     type="submit"
-                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-brand-emerald hover:bg-emerald-400 text-carbon-950 shadow-md shadow-brand-emerald/20 transition-all hover:scale-[1.02] active:scale-[0.98] min-h-[44px] cursor-pointer"
+                    className="w-full sm:w-auto flex-1 inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold bg-brand-emerald hover:bg-emerald-400 text-carbon-950 shadow-md shadow-brand-emerald/20 transition-all hover:scale-[1.02] active:scale-[0.98] min-h-[44px] cursor-pointer"
                   >
                     <MessageSquare className="w-4 h-4" />
                     <span>Send via WhatsApp</span>
@@ -254,7 +254,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleSendEmail}
-                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-paper-100 dark:bg-carbon-800 hover:bg-paper-200 dark:hover:bg-carbon-700 text-paper-800 dark:text-carbon-100 border border-paper-300 dark:border-carbon-700 transition-colors min-h-[44px] cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl text-sm font-semibold bg-paper-100 dark:bg-carbon-800 hover:bg-paper-200 dark:hover:bg-carbon-700 text-paper-800 dark:text-carbon-100 border border-paper-300 dark:border-carbon-700 transition-colors min-h-[44px] cursor-pointer"
                   >
                     <Mail className="w-4 h-4 text-brand-indigo" />
                     <span>Send via Email</span>

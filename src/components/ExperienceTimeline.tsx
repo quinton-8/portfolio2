@@ -9,14 +9,14 @@ export const ExperienceTimeline: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center space-y-3 mb-14">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>[ TRAJECTORY // ENGINEERING_EDUCATION ]</span>
+            <span>Trajectory & Background</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
             Experience & Education
           </h2>
-          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto font-mono">
+          <p className="text-sm sm:text-base text-paper-600 dark:text-carbon-400 max-w-xl mx-auto">
             Bridging rigorous telecommunications networking theory with intense peer-driven software engineering at Zone01 Kisumu.
           </p>
         </div>
@@ -40,18 +40,18 @@ export const ExperienceTimeline: React.FC = () => {
                 {/* Header row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
                   <div>
-                    <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase tracking-wider bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 mb-2">
-                      [ {item.badge} ]
+                    <span className="inline-block px-2.5 py-0.5 rounded text-xs font-semibold bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 mb-2">
+                      {item.badge}
                     </span>
                     <h3 className="text-xl sm:text-2xl font-bold font-heading text-paper-900 dark:text-carbon-100">
                       {item.role}
                     </h3>
-                    <div className="text-base font-semibold text-brand-cyan font-mono mt-0.5">
+                    <div className="text-base font-semibold text-brand-cyan mt-0.5">
                       {item.organization}
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:items-end text-xs font-mono text-paper-500 dark:text-carbon-400 space-y-1">
+                  <div className="flex flex-col sm:items-end text-xs text-paper-500 dark:text-carbon-400 space-y-1">
                     <div className="flex items-center space-x-1.5">
                       <Calendar className="w-3.5 h-3.5" />
                       <span>{item.period}</span>
@@ -83,7 +83,7 @@ export const ExperienceTimeline: React.FC = () => {
                   {item.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded bg-paper-100 dark:bg-carbon-800 text-[11px] font-mono text-paper-600 dark:text-carbon-400 border border-paper-200 dark:border-carbon-700"
+                      className="px-2.5 py-1 rounded bg-paper-100 dark:bg-carbon-800 text-xs font-medium text-paper-600 dark:text-carbon-400 border border-paper-200 dark:border-carbon-700"
                     >
                       {tag}
                     </span>

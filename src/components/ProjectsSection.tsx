@@ -22,9 +22,9 @@ export const ProjectsSection: React.FC = () => {
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div className="space-y-3">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-medium bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>// PRODUCTION_SYSTEMS_AND_ENGINES</span>
+              <span>Production Systems & Engines</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-paper-900 dark:text-carbon-100 font-heading">
               Featured Engineering Projects
@@ -34,8 +34,8 @@ export const ProjectsSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Category Filter Pills (Min 44px touch height) */}
-          <div className="flex flex-wrap gap-2 mt-6 md:mt-0 font-mono text-xs">
+          {/* Category Filter Pills */}
+          <div className="flex flex-wrap gap-2 mt-6 md:mt-0 text-xs sm:text-sm">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -66,9 +66,9 @@ export const ProjectsSection: React.FC = () => {
         {/* GitHub Repositories Banner */}
         <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white dark:bg-carbon-850 border border-paper-200 dark:border-carbon-700 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
           <div className="space-y-1.5 text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start space-x-2 text-xs font-mono text-brand-emerald font-semibold">
+            <div className="flex items-center justify-center sm:justify-start space-x-2 text-xs text-brand-emerald font-semibold">
               <Terminal className="w-3.5 h-3.5" />
-              <span>GITHUB // REPOSITORIES_INDEX</span>
+              <span>GitHub Repositories</span>
             </div>
             <h3 className="text-lg font-bold text-paper-900 dark:text-carbon-100 font-heading">
               Looking for more codebases & open-source tools?
@@ -81,7 +81,7 @@ export const ProjectsSection: React.FC = () => {
             href="https://github.com/quinton-8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-xs font-mono font-bold uppercase tracking-wider bg-paper-900 dark:bg-carbon-100 text-white dark:text-carbon-950 hover:bg-brand-emerald dark:hover:bg-brand-emerald dark:hover:text-carbon-950 transition-all shrink-0 shadow min-h-[44px] cursor-pointer"
+            className="inline-flex items-center space-x-2 px-5 py-3 rounded-xl text-sm font-semibold bg-paper-900 dark:bg-carbon-100 text-white dark:text-carbon-950 hover:bg-brand-emerald dark:hover:bg-brand-emerald dark:hover:text-carbon-950 transition-all shrink-0 shadow min-h-[44px] cursor-pointer"
           >
             <Github className="w-4 h-4" />
             <span>Visit @quinton-8 on GitHub</span>
